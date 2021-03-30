@@ -1,0 +1,70 @@
+﻿<Window x:Class="SwissTransportApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SwissTransportApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="HeaderStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Gray" />
+            <Setter Property="FontSize" Value="24" />
+        </Style>
+    </Window.Resources>
+    <Grid Margin="0,0,21,18" RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="-0.272"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Button x:Name="showTable" Content="Abfahrtstafel anzeigen" HorizontalAlignment="Left" Margin="432,112,0,0" VerticalAlignment="Top" Width="158" Height="40">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#ff0000"></Setter>
+                    <Setter Property="Foreground" Value="#fcfcfc"></Setter>
+                    <Setter Property="BorderBrush" Value="#ff0000"></Setter>
+                    <Setter Property="FontWeight" Value="Bold"></Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="showConnection" Content="Verbindungen anzeigen" HorizontalAlignment="Left" Margin="432,169,0,0" VerticalAlignment="Top" Width="158" Height="40">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#ff0000"></Setter>
+                    <Setter Property="Foreground" Value="#fcfcfc"></Setter>
+                    <Setter Property="BorderBrush" Value="#ff0000"></Setter>
+                    <Setter Property="FontWeight" Value="Bold"></Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="showMap" Content="Karte anzeigen" HorizontalAlignment="Left" Margin="279,169,0,0" VerticalAlignment="Top" Width="141" Height="40" Click="showMap_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#ff0000"></Setter>
+                    <Setter Property="Foreground" Value="#fcfcfc"></Setter>
+                    <Setter Property="BorderBrush" Value="#ff0000"></Setter>
+                    <Setter Property="FontWeight" Value="Bold"></Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+        <TextBox x:Name="inputArrival" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="40" Margin="234,112,0,0" TextWrapping="Wrap" Text=" Ankunftsort: "  VerticalAlignment="Top" Width="186">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="BorderBrush" Value="black"></Setter>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <TextBox x:Name="inputDeparture" VerticalContentAlignment="Center"  HorizontalAlignment="Left" Height="40" Margin="23,112,0,0" TextWrapping="Wrap" Text=" Abfahrtsort: " VerticalAlignment="Top" Width="186">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="BorderBrush" Value="black"></Setter>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <DatePicker HorizontalAlignment="Left" Margin="23,177,0,0" VerticalAlignment="Top" Width="186" Height="32"/>
+    </Grid>
+</Window>
