@@ -74,6 +74,7 @@ namespace SwissTransportApplication
             this.dataConnections.ReadOnly = true;
             this.dataConnections.Size = new System.Drawing.Size(833, 311);
             this.dataConnections.TabIndex = 200;
+            this.dataConnections.Visible = false;
             // 
             // Gleis
             // 
@@ -131,7 +132,7 @@ namespace SwissTransportApplication
             this.inputDeparture.Name = "inputDeparture";
             this.inputDeparture.Size = new System.Drawing.Size(231, 21);
             this.inputDeparture.TabIndex = 1;
-            this.inputDeparture.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputDeparture_KeyPressed); 
+            this.inputDeparture.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputDeparture_KeyPressed);
             // 
             // inputArrival
             // 

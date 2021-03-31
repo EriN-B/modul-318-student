@@ -76,6 +76,8 @@ namespace SwissTransportApplication
             {
                 if (inputStation.Text != "")
                 {
+                    dataStainBoard.Visible = true;
+
                     var transport = new Transport();
 
                     var stations = transport.GetStations(inputStation.Text);

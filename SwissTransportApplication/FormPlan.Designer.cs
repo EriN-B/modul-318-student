@@ -78,6 +78,7 @@ namespace SwissTransportApplication
             this.dataStainBoard.ReadOnly = true;
             this.dataStainBoard.Size = new System.Drawing.Size(472, 418);
             this.dataStainBoard.TabIndex = 2;
+            this.dataStainBoard.Visible = false;
             // 
             // labelInfoText
             // 

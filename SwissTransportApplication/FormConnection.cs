@@ -16,33 +16,35 @@ namespace SwissTransportApplication
 
         private void buttonSearchConnection_Click(object sender, EventArgs e)
         {
-            try
+            if (inputDeparture.Text == "" || inputArrival.Text == "")
             {
-                dataConnections.Rows.Clear();
-
-                var transport = new Transport();
-
-                var connections = transport.GetConnections(inputDeparture.Text, inputArrival.Text);
-
-                foreach (var connection in connections.ConnectionList)
-                {
-                    dataConnections.Rows.Add
-                    (
-                        connection.From.Platform,
-                        connection.From.Station.Name,
-                        connection.To.Station.Name,
-                        connection.From.Departure.Value.Hour.ToString() + ":" + connection.From.Departure.Value.Minute.ToString(),
-                        connection.To.Arrival.Value.Hour.ToString() + ":" + connection.To.Arrival.Value.Minute.ToString()
-                    );
-                }
+                showMessageBox("Bitte geben Sie 2 Werte ein.", "Alert", messageBoxType.Error);
             }
-            catch
+            else
             {
-                if (inputDeparture.Text == "" || inputArrival.Text == "")
+                try
                 {
-                    showMessageBox("Bitte geben Sie 2 Werte ein.", "Alert", messageBoxType.Error);
+                    dataConnections.Visible = true;
+
+                    dataConnections.Rows.Clear();
+
+                    var transport = new Transport();
+
+                    var connections = transport.GetConnections(inputDeparture.Text, inputArrival.Text);
+
+                    foreach (var connection in connections.ConnectionList)
+                    {
+                        dataConnections.Rows.Add
+                        (
+                            connection.From.Platform,
+                            connection.From.Station.Name,
+                            connection.To.Station.Name,
+                            connection.From.Departure.Value.Hour.ToString() + ":" + connection.From.Departure.Value.Minute.ToString(),
+                            connection.To.Arrival.Value.Hour.ToString() + ":" + connection.To.Arrival.Value.Minute.ToString()
+                        );
+                    }
                 }
-                else
+                catch
                 {
                     showMessageBox("Die angegeben Station kann nicht gefunden werden", "Error", messageBoxType.Error);
                 }
