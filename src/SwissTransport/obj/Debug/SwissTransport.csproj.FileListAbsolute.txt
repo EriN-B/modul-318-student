@@ -7,3 +7,12 @@ C:\Users\Admin\source\repos\modul-318\src\SwissTransport\obj\Debug\SwissTranspor
 C:\Users\Admin\source\repos\modul-318\src\SwissTransport\obj\Debug\SwissTransport.csproj.CopyComplete
 C:\Users\Admin\source\repos\modul-318\src\SwissTransport\obj\Debug\SwissTransport.dll
 C:\Users\Admin\source\repos\modul-318\src\SwissTransport\obj\Debug\SwissTransport.pdb
+D:\Projects\modul-318-student\src\SwissTransport\bin\Debug\SwissTransport.dll
+D:\Projects\modul-318-student\src\SwissTransport\bin\Debug\SwissTransport.pdb
+D:\Projects\modul-318-student\src\SwissTransport\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\modul-318-student\src\SwissTransport\bin\Debug\Newtonsoft.Json.xml
+D:\Projects\modul-318-student\src\SwissTransport\obj\Debug\SwissTransport.csprojAssemblyReference.cache
+D:\Projects\modul-318-student\src\SwissTransport\obj\Debug\SwissTransport.csproj.CoreCompileInputs.cache
+D:\Projects\modul-318-student\src\SwissTransport\obj\Debug\SwissTransport.csproj.CopyComplete
+D:\Projects\modul-318-student\src\SwissTransport\obj\Debug\SwissTransport.dll
+D:\Projects\modul-318-student\src\SwissTransport\obj\Debug\SwissTransport.pdb

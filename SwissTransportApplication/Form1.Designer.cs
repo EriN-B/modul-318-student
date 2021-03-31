@@ -24,8 +24,8 @@ namespace SwissTransportApplication
         #region Vom Windows Form-Designer generierter Code
 
         /// <summary>
-        /// Erforderliche Methode für die Designerunterstützung.
-        /// Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -44,7 +44,7 @@ namespace SwissTransportApplication
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(78)))));
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (51)))), ((int) (((byte) (52)))), ((int) (((byte) (78)))));
             this.panelMenu.Controls.Add(this.buttonStation);
             this.panelMenu.Controls.Add(this.buttonMap);
             this.panelMenu.Controls.Add(this.buttonPlan);
@@ -119,7 +119,7 @@ namespace SwissTransportApplication
             // 
             // panelLogo
             // 
-            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (39)))), ((int) (((byte) (39)))), ((int) (((byte) (58)))));
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -129,7 +129,7 @@ namespace SwissTransportApplication
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (39)))), ((int) (((byte) (39)))), ((int) (((byte) (58)))));
             this.panelHeader.Controls.Add(this.labelTitle);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(270, 0);
@@ -140,7 +140,7 @@ namespace SwissTransportApplication
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Microsoft JhengHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft JhengHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.labelTitle.ForeColor = System.Drawing.Color.White;
             this.labelTitle.Location = new System.Drawing.Point(7, 18);
             this.labelTitle.Name = "labelTitle";
@@ -166,7 +166,7 @@ namespace SwissTransportApplication
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.panelMenu);
-            this.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -175,7 +175,6 @@ namespace SwissTransportApplication
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.ResumeLayout(false);
-
         }
 
         #endregion

@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using SwissTransport.Core;
+using System.Net;
+using System.Net.Mail;
+using System.Net.Mime;
+using System.Threading;
+using System.ComponentModel;
+using Microsoft.VisualBasic;
 
 namespace SwissTransportApplication
 {
     public partial class FormConnection : Form
     {
         private readonly List<string> typeAheadStations = new List<string>();
-
         public FormConnection()
         {
             InitializeComponent();
@@ -32,6 +37,16 @@ namespace SwissTransportApplication
 
                     var connections = transport.GetConnections(inputDeparture.Text, inputArrival.Text);
 
+                    DataGridViewButtonColumn buttonSend = new DataGridViewButtonColumn();
+
+                    buttonSend.HeaderText = "Share";
+
+                    buttonSend.Name = "buttonSend";
+
+                    buttonSend.Text = "Share";
+
+                    buttonSend.UseColumnTextForButtonValue = true;
+
                     foreach (var connection in connections.ConnectionList)
                     {
                         dataConnections.Rows.Add
@@ -43,6 +58,7 @@ namespace SwissTransportApplication
                             connection.To.Arrival.Value.Hour.ToString() + ":" + connection.To.Arrival.Value.Minute.ToString()
                         );
                     }
+                    dataConnections.Columns.Add(buttonSend);
                 }
                 catch
                 {
@@ -168,6 +184,41 @@ namespace SwissTransportApplication
         {
             Arrival,
             Departure
+        }
+
+        private void dataConnections_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex == 5 && e.RowIndex < 4)
+            {
+                var toAdress = new MailAddress("noreply.m318@gmail.com");
+                var fromAdress = new MailAddress("noreply.m318@gmail.com", "m318-student");
+                const string fromPassword = "Luzern2021!#";
+
+                var smtpClient = new SmtpClient
+                {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(fromAdress.Address, fromPassword)
+                };
+
+                try
+                {
+                    using(var message = new MailMessage(fromAdress, toAdress))
+                    {
+                        message.To.Add(toAdress.Address);
+                        message.Subject = "Test";
+                        message.Body = "Test";
+                        smtpClient.Send(message);
+                    }
+                }
+                catch(Exception error)
+                {
+                    MessageBox.Show(error.Message);
+                }
+            }
         }
     }
 }

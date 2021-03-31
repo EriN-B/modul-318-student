@@ -29,20 +29,23 @@ namespace SwissTransportApplication
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonSearchConnection = new System.Windows.Forms.Button();
             this.dataConnections = new System.Windows.Forms.DataGridView();
-            this.Gleis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abOrt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.anOrt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abZeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.anZeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelDeparture = new System.Windows.Forms.Label();
             this.labelArrival = new System.Windows.Forms.Label();
             this.inputDeparture = new System.Windows.Forms.ComboBox();
             this.inputArrival = new System.Windows.Forms.ComboBox();
             this.labelErrorDeparture = new System.Windows.Forms.Label();
             this.labelErrorArrival = new System.Windows.Forms.Label();
+            this.Gleis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abOrt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.anOrt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abZeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.anZeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.formConnectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataConnections)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formConnectionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonSearchConnection
@@ -75,36 +78,7 @@ namespace SwissTransportApplication
             this.dataConnections.Size = new System.Drawing.Size(833, 311);
             this.dataConnections.TabIndex = 200;
             this.dataConnections.Visible = false;
-            // 
-            // Gleis
-            // 
-            this.Gleis.HeaderText = "Gleis";
-            this.Gleis.Name = "Gleis";
-            this.Gleis.ReadOnly = true;
-            // 
-            // abOrt
-            // 
-            this.abOrt.HeaderText = "nach";
-            this.abOrt.Name = "abOrt";
-            this.abOrt.ReadOnly = true;
-            // 
-            // anOrt
-            // 
-            this.anOrt.HeaderText = "Nach";
-            this.anOrt.Name = "anOrt";
-            this.anOrt.ReadOnly = true;
-            // 
-            // abZeit
-            // 
-            this.abZeit.HeaderText = "Zeit (ab)";
-            this.abZeit.Name = "abZeit";
-            this.abZeit.ReadOnly = true;
-            // 
-            // anZeit
-            // 
-            this.anZeit.HeaderText = "Zeit (an)";
-            this.anZeit.Name = "anZeit";
-            this.anZeit.ReadOnly = true;
+            this.dataConnections.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataConnections_CellContentClick);
             // 
             // labelDeparture
             // 
@@ -164,6 +138,40 @@ namespace SwissTransportApplication
             this.labelErrorArrival.TabIndex = 13;
             this.labelErrorArrival.Visible = false;
             // 
+            // Gleis
+            // 
+            this.Gleis.HeaderText = "Gleis";
+            this.Gleis.Name = "Gleis";
+            this.Gleis.ReadOnly = true;
+            // 
+            // abOrt
+            // 
+            this.abOrt.HeaderText = "Von";
+            this.abOrt.Name = "abOrt";
+            this.abOrt.ReadOnly = true;
+            // 
+            // anOrt
+            // 
+            this.anOrt.HeaderText = "Nach";
+            this.anOrt.Name = "anOrt";
+            this.anOrt.ReadOnly = true;
+            // 
+            // abZeit
+            // 
+            this.abZeit.HeaderText = "Zeit (ab)";
+            this.abZeit.Name = "abZeit";
+            this.abZeit.ReadOnly = true;
+            // 
+            // anZeit
+            // 
+            this.anZeit.HeaderText = "Zeit (an)";
+            this.anZeit.Name = "anZeit";
+            this.anZeit.ReadOnly = true;
+            // 
+            // formConnectionBindingSource
+            // 
+            this.formConnectionBindingSource.DataSource = typeof(SwissTransportApplication.FormConnection);
+            // 
             // FormConnection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,6 +188,7 @@ namespace SwissTransportApplication
             this.Name = "FormConnection";
             this.Text = "FormConnection";
             ((System.ComponentModel.ISupportInitialize)(this.dataConnections)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formConnectionBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,12 +201,13 @@ namespace SwissTransportApplication
         private System.Windows.Forms.Label labelArrival;
         private System.Windows.Forms.ComboBox inputDeparture;
         private System.Windows.Forms.ComboBox inputArrival;
+        private System.Windows.Forms.Label labelErrorDeparture;
+        private System.Windows.Forms.Label labelErrorArrival;
+        private System.Windows.Forms.BindingSource formConnectionBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gleis;
         private System.Windows.Forms.DataGridViewTextBoxColumn abOrt;
         private System.Windows.Forms.DataGridViewTextBoxColumn anOrt;
         private System.Windows.Forms.DataGridViewTextBoxColumn abZeit;
         private System.Windows.Forms.DataGridViewTextBoxColumn anZeit;
-        private System.Windows.Forms.Label labelErrorDeparture;
-        private System.Windows.Forms.Label labelErrorArrival;
     }
 }
