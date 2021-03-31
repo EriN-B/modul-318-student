@@ -30,21 +30,23 @@ namespace SwissTransportApplication
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.buttonStation = new System.Windows.Forms.Button();
             this.buttonMap = new System.Windows.Forms.Button();
-            this.buttonStations = new System.Windows.Forms.Button();
             this.buttonPlan = new System.Windows.Forms.Button();
             this.buttonConnections = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.labelTitle = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
+            this.panelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(78)))));
+            this.panelMenu.Controls.Add(this.buttonStation);
             this.panelMenu.Controls.Add(this.buttonMap);
-            this.panelMenu.Controls.Add(this.buttonStations);
             this.panelMenu.Controls.Add(this.buttonPlan);
             this.panelMenu.Controls.Add(this.buttonConnections);
             this.panelMenu.Controls.Add(this.panelLogo);
@@ -55,13 +57,28 @@ namespace SwissTransportApplication
             this.panelMenu.Size = new System.Drawing.Size(270, 692);
             this.panelMenu.TabIndex = 0;
             // 
+            // buttonStation
+            // 
+            this.buttonStation.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonStation.FlatAppearance.BorderSize = 0;
+            this.buttonStation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonStation.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonStation.Location = new System.Drawing.Point(0, 260);
+            this.buttonStation.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.buttonStation.Name = "buttonStation";
+            this.buttonStation.Size = new System.Drawing.Size(270, 60);
+            this.buttonStation.TabIndex = 5;
+            this.buttonStation.Text = "Station suchen";
+            this.buttonStation.UseVisualStyleBackColor = true;
+            this.buttonStation.Click += new System.EventHandler(this.buttonStation_Click);
+            // 
             // buttonMap
             // 
             this.buttonMap.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonMap.FlatAppearance.BorderSize = 0;
             this.buttonMap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMap.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonMap.Location = new System.Drawing.Point(0, 260);
+            this.buttonMap.Location = new System.Drawing.Point(0, 200);
             this.buttonMap.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonMap.Name = "buttonMap";
             this.buttonMap.Size = new System.Drawing.Size(270, 60);
@@ -69,21 +86,6 @@ namespace SwissTransportApplication
             this.buttonMap.Text = "Karte";
             this.buttonMap.UseVisualStyleBackColor = true;
             this.buttonMap.Click += new System.EventHandler(this.buttonMap_Click);
-            // 
-            // buttonStations
-            // 
-            this.buttonStations.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonStations.FlatAppearance.BorderSize = 0;
-            this.buttonStations.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonStations.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonStations.Location = new System.Drawing.Point(0, 200);
-            this.buttonStations.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonStations.Name = "buttonStations";
-            this.buttonStations.Size = new System.Drawing.Size(270, 60);
-            this.buttonStations.TabIndex = 3;
-            this.buttonStations.Text = "Stationen";
-            this.buttonStations.UseVisualStyleBackColor = true;
-            this.buttonStations.Click += new System.EventHandler(this.buttonStations_Click);
             // 
             // buttonPlan
             // 
@@ -127,6 +129,8 @@ namespace SwissTransportApplication
             // 
             // panelHeader
             // 
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panelHeader.Controls.Add(this.labelTitle);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(270, 0);
             this.panelHeader.Name = "panelHeader";
@@ -137,9 +141,21 @@ namespace SwissTransportApplication
             // 
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(270, 80);
+            this.panelMain.MaximumSize = new System.Drawing.Size(989, 612);
+            this.panelMain.MinimumSize = new System.Drawing.Size(989, 612);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(989, 612);
             this.panelMain.TabIndex = 2;
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft JhengHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.ForeColor = System.Drawing.Color.White;
+            this.labelTitle.Location = new System.Drawing.Point(447, 22);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(0, 40);
+            this.labelTitle.TabIndex = 0;
             // 
             // Form1
             // 
@@ -154,7 +170,10 @@ namespace SwissTransportApplication
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panelMenu.ResumeLayout(false);
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -164,11 +183,12 @@ namespace SwissTransportApplication
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Button buttonMap;
-        private System.Windows.Forms.Button buttonStations;
         private System.Windows.Forms.Button buttonPlan;
         private System.Windows.Forms.Button buttonConnections;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Panel panelMain;
+        private System.Windows.Forms.Button buttonStation;
+        private System.Windows.Forms.Label labelTitle;
     }
 }
 

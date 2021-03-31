@@ -28,6 +28,7 @@ namespace SwissTransportApplication
             formPlan.FormBorderStyle = FormBorderStyle.None;
             panelMain.Controls.Add(formPlan);
             formPlan.Show();
+            labelTitle.Text = "Abfahrtstafel";
         }
 
         private void buttonConnections_Click(object sender, EventArgs e)
@@ -37,15 +38,7 @@ namespace SwissTransportApplication
             formConnection.FormBorderStyle = FormBorderStyle.None;
             panelMain.Controls.Add(formConnection);
             formConnection.Show();
-        }
-
-        private void buttonStations_Click(object sender, EventArgs e)
-        {
-            panelMain.Controls.Clear();
-            FormStation formStation = new FormStation(){ Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            formStation.FormBorderStyle = FormBorderStyle.None;
-            panelMain.Controls.Add(formStation);
-            formStation.Show();
+            labelTitle.Text = "Verbindungen";
         }
 
         private void buttonMap_Click(object sender, EventArgs e)
@@ -55,6 +48,28 @@ namespace SwissTransportApplication
             formMap.FormBorderStyle = FormBorderStyle.None;
             panelMain.Controls.Add(formMap);
             formMap.Show();
+            labelTitle.Text = "Karte";
+        }
+
+        private void buttonStation_Click(object sender, EventArgs e)
+        {
+            //Load Station-Serch Component
+            panelMain.Controls.Clear();
+            FormStation formStation = new FormStation { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formStation.FormBorderStyle = FormBorderStyle.None;
+            panelMain.Controls.Add(formStation);
+            formStation.Show();
+            labelTitle.Text = "Stationen";
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            panelMain.Controls.Clear();
+            FormConnection formConnection = new FormConnection() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formConnection.FormBorderStyle = FormBorderStyle.None;
+            panelMain.Controls.Add(formConnection);
+            formConnection.Show();
+            labelTitle.Text = "Verbindungen";
         }
     }
 }

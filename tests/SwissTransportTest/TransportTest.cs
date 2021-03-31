@@ -22,15 +22,6 @@
         }
 
         [TestMethod]
-        public void StationBoard()
-        {
-            testee = new Transport();
-            var stationBoard = this.testee.GetStationBoard("Sursee", "8502007");
-
-            Assert.IsNotNull(stationBoard);
-        }
-
-        [TestMethod]
         public void Connections()
         {
             testee = new Transport();

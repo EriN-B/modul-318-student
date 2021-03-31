@@ -24,12 +24,18 @@ namespace SwissTransportApplication
             listStations.Items.Clear();
             if (inputStation.Text != null)
             {
-  
-                Transport ts = new Transport();
-                Stations st = ts.GetStations(inputStation.Text);
-                foreach (var station in st.StationList)
+                try
                 {
-                    listStations.Items.Add(station.Name);
+                    Transport ts = new Transport();
+                    Stations st = ts.GetStations(inputStation.Text);
+                    foreach (var station in st.StationList)
+                    {
+                        listStations.Items.Add(station.Name);
+                    }
+                }
+                catch
+                {
+                    //if the request results in a "null" value, this "catch" prevents the program from Quitting.
                 }
             }
         }

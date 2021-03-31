@@ -1,0 +1,15 @@
+C:\Users\Admin\source\repos\modul-318\SwissTransportApp\bin\Debug\SwissTransportApp.exe.config
+C:\Users\Admin\source\repos\modul-318\SwissTransportApp\bin\Debug\SwissTransportApp.exe
+C:\Users\Admin\source\repos\modul-318\SwissTransportApp\bin\Debug\SwissTransportApp.pdb
+C:\Users\Admin\source\repos\modul-318\SwissTransportApp\obj\Debug\SwissTransportApp.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\modul-318\SwissTransportApp\obj\Debug\MainWindow.g.cs
+C:\Users\Admin\source\repos\modul-318\SwissTransportApp\obj\Debug\App.g.cs
+C:\Users\Admin\source\repos\modul-318\SwissTransportApp\obj\Debug\SwissTransportApp_MarkupCompile.cache
+C:\Users\Admin\source\repos\modul-318\SwissTransportApp\obj\Debug\SwissTransportApp_MarkupCompile.lref
+C:\Users\Admin\source\repos\modul-318\SwissTransportApp\obj\Debug\MainWindow.baml
+C:\Users\Admin\source\repos\modul-318\SwissTransportApp\obj\Debug\SwissTransportApp.g.resources
+C:\Users\Admin\source\repos\modul-318\SwissTransportApp\obj\Debug\SwissTransportApp.Properties.Resources.resources
+C:\Users\Admin\source\repos\modul-318\SwissTransportApp\obj\Debug\SwissTransportApp.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\modul-318\SwissTransportApp\obj\Debug\SwissTransportApp.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\modul-318\SwissTransportApp\obj\Debug\SwissTransportApp.exe
+C:\Users\Admin\source\repos\modul-318\SwissTransportApp\obj\Debug\SwissTransportApp.pdb
