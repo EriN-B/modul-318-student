@@ -42,7 +42,7 @@ namespace SwissTransportApplication
                             inputStation.Text,
                             stations.To,
                             stations.Category,
-                            stations.Stop.Departure
+                            stations.Stop.Departure.Hour.ToString() + ":" + stations.Stop.Departure.Minute.ToString()
                         );
                     }
                 }
@@ -94,6 +94,11 @@ namespace SwissTransportApplication
             {
                 //if the request results in a "null" value, this "catch" prevents the program from Quitting.
             }
+        }
+
+        private void FormPlan_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = inputStation;
         }
     }
 }

@@ -90,13 +90,13 @@ namespace SwissTransportApplication
             // 
             // anOrt
             // 
-            this.anOrt.HeaderText = "Nach";
+            this.anOrt.HeaderText = "Von";
             this.anOrt.Name = "anOrt";
             this.anOrt.ReadOnly = true;
             // 
             // abOrt
             // 
-            this.abOrt.HeaderText = "Von";
+            this.abOrt.HeaderText = "Nach";
             this.abOrt.Name = "abOrt";
             this.abOrt.ReadOnly = true;
             // 
@@ -123,6 +123,7 @@ namespace SwissTransportApplication
             this.Controls.Add(this.buttonSearchStation);
             this.Name = "FormPlan";
             this.Text = "FormPlan";
+            this.Load += new System.EventHandler(this.FormPlan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataStainBoard)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

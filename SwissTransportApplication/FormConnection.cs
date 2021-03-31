@@ -26,23 +26,13 @@ namespace SwissTransportApplication
 
                 foreach (var connection in connections.ConnectionList)
                 {
-                    var platform = connection.From.Platform;
-
-                    var timeDepartureHour = connection.From.Departure.Value.Hour.ToString();
-
-                    var timeDepartureMinute = connection.From.Departure.Value.Minute.ToString();
-
-                    var timeArrivalHour = connection.To.Arrival.Value.Hour.ToString();
-
-                    var timeArrivalMinute = connection.To.Arrival.Value.Minute.ToString();
-
                     dataConnections.Rows.Add
                     (
-                        platform,
+                        connection.From.Platform,
                         connection.From.Station.Name,
                         connection.To.Station.Name,
-                        timeDepartureHour + ":" + timeArrivalMinute,
-                        timeArrivalHour + ":" + timeArrivalMinute
+                        connection.From.Departure.Value.Hour.ToString() + ":" + connection.From.Departure.Value.Minute.ToString(),
+                        connection.To.Arrival.Value.Hour.ToString() + ":" + connection.To.Arrival.Value.Minute.ToString()
                     );
                 }
             }

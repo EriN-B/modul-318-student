@@ -36,8 +36,8 @@ namespace SwissTransportApplication
             this.buttonConnections = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.panelMain = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
@@ -137,6 +137,16 @@ namespace SwissTransportApplication
             this.panelHeader.Size = new System.Drawing.Size(989, 80);
             this.panelHeader.TabIndex = 1;
             // 
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft JhengHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.ForeColor = System.Drawing.Color.White;
+            this.labelTitle.Location = new System.Drawing.Point(7, 18);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(0, 40);
+            this.labelTitle.TabIndex = 0;
+            // 
             // panelMain
             // 
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -146,16 +156,6 @@ namespace SwissTransportApplication
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(989, 612);
             this.panelMain.TabIndex = 2;
-            // 
-            // labelTitle
-            // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Microsoft JhengHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(447, 22);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(0, 40);
-            this.labelTitle.TabIndex = 0;
             // 
             // Form1
             // 
