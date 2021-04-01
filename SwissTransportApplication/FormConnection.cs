@@ -13,6 +13,7 @@ namespace SwissTransportApplication
         private readonly List<string> typeAheadStations = new List<string>();
 
         private int mailIndex;
+
         public FormConnection()
         {
             InitializeComponent();
@@ -52,7 +53,9 @@ namespace SwissTransportApplication
                             connection.From.Departure.Value.Hour + ":" + connection.From.Departure.Value.Minute,
                             connection.To.Arrival.Value.Hour + ":" + connection.To.Arrival.Value.Minute
                         );
+
                     mailIndex += 1;
+
                     if (mailIndex == 1)
                     {
                         dataConnections.Columns.Add(buttonSend);
@@ -220,7 +223,7 @@ namespace SwissTransportApplication
                                 "Zeit (an): " + dataTimeTo + "\n"
                             );
                             smtpClient.Send(message);
-                            MessageBox.Show("E-Mail Erfolgreich an: "+inputEmail.Text + " versendet", "E-Mail Sender", MessageBoxButtons.OK,
+                            MessageBox.Show("E-Mail Erfolgreich an "+inputEmail.Text + " versendet", "E-Mail Sender", MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
                         }
                     }
