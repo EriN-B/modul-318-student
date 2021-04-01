@@ -59,7 +59,7 @@ namespace SwissTransportApplication
                             MessageBoxIcon.Warning);
                     }
                 }
-                catch (Exception error)
+                catch
                 {
                     MessageBox.Show("Diese Station scheint keine Coordinaten zu haben", "Maps", MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);

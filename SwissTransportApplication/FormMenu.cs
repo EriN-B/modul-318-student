@@ -5,9 +5,6 @@ namespace SwissTransportApplication
 {
     public partial class FormMenu : Form
     {
-        //Fields
-        private Button currentButton;
-
         public FormMenu()
         {
             InitializeComponent();
