@@ -32,6 +32,11 @@ namespace SwissTransportApplication
             this.components = new System.ComponentModel.Container();
             this.buttonSearchConnection = new System.Windows.Forms.Button();
             this.dataConnections = new System.Windows.Forms.DataGridView();
+            this.platform = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fromPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fromTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ToTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelDeparture = new System.Windows.Forms.Label();
             this.labelArrival = new System.Windows.Forms.Label();
             this.inputDeparture = new System.Windows.Forms.ComboBox();
@@ -40,11 +45,7 @@ namespace SwissTransportApplication
             this.labelErrorArrival = new System.Windows.Forms.Label();
             this.inputEmail = new System.Windows.Forms.TextBox();
             this.labelEmail = new System.Windows.Forms.Label();
-            this.platform = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fromPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fromTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ToTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonSwitch = new System.Windows.Forms.Button();
             this.formConnectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataConnections)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formConnectionBindingSource)).BeginInit();
@@ -53,7 +54,7 @@ namespace SwissTransportApplication
             // buttonSearchConnection
             // 
             this.buttonSearchConnection.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonSearchConnection.Location = new System.Drawing.Point(301, 91);
+            this.buttonSearchConnection.Location = new System.Drawing.Point(334, 91);
             this.buttonSearchConnection.Name = "buttonSearchConnection";
             this.buttonSearchConnection.Size = new System.Drawing.Size(241, 23);
             this.buttonSearchConnection.TabIndex = 4;
@@ -63,6 +64,9 @@ namespace SwissTransportApplication
             // 
             // dataConnections
             // 
+            this.dataConnections.AllowUserToAddRows = false;
+            this.dataConnections.AllowUserToDeleteRows = false;
+            this.dataConnections.AllowUserToResizeRows = false;
             this.dataConnections.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataConnections.BackgroundColor = System.Drawing.Color.White;
             this.dataConnections.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -74,87 +78,13 @@ namespace SwissTransportApplication
             this.ToTime});
             this.dataConnections.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataConnections.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dataConnections.Location = new System.Drawing.Point(0, 188);
+            this.dataConnections.Location = new System.Drawing.Point(0, 237);
             this.dataConnections.Name = "dataConnections";
             this.dataConnections.ReadOnly = true;
-            this.dataConnections.Size = new System.Drawing.Size(833, 359);
+            this.dataConnections.Size = new System.Drawing.Size(924, 310);
             this.dataConnections.TabIndex = 200;
             this.dataConnections.Visible = false;
             this.dataConnections.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataConnections_CellContentClick);
-            // 
-            // labelDeparture
-            // 
-            this.labelDeparture.AutoSize = true;
-            this.labelDeparture.Location = new System.Drawing.Point(28, 33);
-            this.labelDeparture.Name = "labelDeparture";
-            this.labelDeparture.Size = new System.Drawing.Size(61, 13);
-            this.labelDeparture.TabIndex = 6;
-            this.labelDeparture.Text = "Abfahrtsort:";
-            // 
-            // labelArrival
-            // 
-            this.labelArrival.AutoSize = true;
-            this.labelArrival.Location = new System.Drawing.Point(298, 33);
-            this.labelArrival.Name = "labelArrival";
-            this.labelArrival.Size = new System.Drawing.Size(64, 13);
-            this.labelArrival.TabIndex = 7;
-            this.labelArrival.Text = "Ankunftsort:";
-            // 
-            // inputDeparture
-            // 
-            this.inputDeparture.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.inputDeparture.FormattingEnabled = true;
-            this.inputDeparture.Location = new System.Drawing.Point(28, 50);
-            this.inputDeparture.Name = "inputDeparture";
-            this.inputDeparture.Size = new System.Drawing.Size(231, 21);
-            this.inputDeparture.TabIndex = 1;
-            this.inputDeparture.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputDeparture_KeyPressed);
-            // 
-            // inputArrival
-            // 
-            this.inputArrival.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.inputArrival.FormattingEnabled = true;
-            this.inputArrival.Location = new System.Drawing.Point(301, 50);
-            this.inputArrival.Name = "inputArrival";
-            this.inputArrival.Size = new System.Drawing.Size(241, 21);
-            this.inputArrival.TabIndex = 2;
-            this.inputArrival.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputArrival_KeyPressed);
-            // 
-            // labelErrorDeparture
-            // 
-            this.labelErrorDeparture.AutoSize = true;
-            this.labelErrorDeparture.ForeColor = System.Drawing.Color.Red;
-            this.labelErrorDeparture.Location = new System.Drawing.Point(28, 78);
-            this.labelErrorDeparture.Name = "labelErrorDeparture";
-            this.labelErrorDeparture.Size = new System.Drawing.Size(0, 13);
-            this.labelErrorDeparture.TabIndex = 12;
-            this.labelErrorDeparture.Visible = false;
-            // 
-            // labelErrorArrival
-            // 
-            this.labelErrorArrival.AutoSize = true;
-            this.labelErrorArrival.ForeColor = System.Drawing.Color.Red;
-            this.labelErrorArrival.Location = new System.Drawing.Point(301, 78);
-            this.labelErrorArrival.Name = "labelErrorArrival";
-            this.labelErrorArrival.Size = new System.Drawing.Size(0, 13);
-            this.labelErrorArrival.TabIndex = 13;
-            this.labelErrorArrival.Visible = false;
-            // 
-            // inputEmail
-            // 
-            this.inputEmail.Location = new System.Drawing.Point(28, 94);
-            this.inputEmail.Name = "inputEmail";
-            this.inputEmail.Size = new System.Drawing.Size(231, 20);
-            this.inputEmail.TabIndex = 3;
-            // 
-            // labelEmail
-            // 
-            this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(28, 78);
-            this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(71, 13);
-            this.labelEmail.TabIndex = 202;
-            this.labelEmail.Text = "E-Mail Adress";
             // 
             // platform
             // 
@@ -191,6 +121,90 @@ namespace SwissTransportApplication
             this.ToTime.Name = "ToTime";
             this.ToTime.ReadOnly = true;
             // 
+            // labelDeparture
+            // 
+            this.labelDeparture.AutoSize = true;
+            this.labelDeparture.Location = new System.Drawing.Point(41, 33);
+            this.labelDeparture.Name = "labelDeparture";
+            this.labelDeparture.Size = new System.Drawing.Size(61, 13);
+            this.labelDeparture.TabIndex = 6;
+            this.labelDeparture.Text = "Abfahrtsort:";
+            // 
+            // labelArrival
+            // 
+            this.labelArrival.AutoSize = true;
+            this.labelArrival.Location = new System.Drawing.Point(331, 33);
+            this.labelArrival.Name = "labelArrival";
+            this.labelArrival.Size = new System.Drawing.Size(64, 13);
+            this.labelArrival.TabIndex = 7;
+            this.labelArrival.Text = "Ankunftsort:";
+            // 
+            // inputDeparture
+            // 
+            this.inputDeparture.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.inputDeparture.FormattingEnabled = true;
+            this.inputDeparture.Location = new System.Drawing.Point(44, 50);
+            this.inputDeparture.Name = "inputDeparture";
+            this.inputDeparture.Size = new System.Drawing.Size(231, 21);
+            this.inputDeparture.TabIndex = 1;
+            this.inputDeparture.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputDeparture_KeyPressed);
+            // 
+            // inputArrival
+            // 
+            this.inputArrival.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.inputArrival.FormattingEnabled = true;
+            this.inputArrival.Location = new System.Drawing.Point(334, 50);
+            this.inputArrival.Name = "inputArrival";
+            this.inputArrival.Size = new System.Drawing.Size(241, 21);
+            this.inputArrival.TabIndex = 2;
+            this.inputArrival.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputArrival_KeyPressed);
+            // 
+            // labelErrorDeparture
+            // 
+            this.labelErrorDeparture.AutoSize = true;
+            this.labelErrorDeparture.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorDeparture.Location = new System.Drawing.Point(28, 78);
+            this.labelErrorDeparture.Name = "labelErrorDeparture";
+            this.labelErrorDeparture.Size = new System.Drawing.Size(0, 13);
+            this.labelErrorDeparture.TabIndex = 12;
+            this.labelErrorDeparture.Visible = false;
+            // 
+            // labelErrorArrival
+            // 
+            this.labelErrorArrival.AutoSize = true;
+            this.labelErrorArrival.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorArrival.Location = new System.Drawing.Point(301, 78);
+            this.labelErrorArrival.Name = "labelErrorArrival";
+            this.labelErrorArrival.Size = new System.Drawing.Size(0, 13);
+            this.labelErrorArrival.TabIndex = 13;
+            this.labelErrorArrival.Visible = false;
+            // 
+            // inputEmail
+            // 
+            this.inputEmail.Location = new System.Drawing.Point(44, 94);
+            this.inputEmail.Name = "inputEmail";
+            this.inputEmail.Size = new System.Drawing.Size(231, 20);
+            this.inputEmail.TabIndex = 3;
+            // 
+            // labelEmail
+            // 
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.Location = new System.Drawing.Point(41, 78);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(71, 13);
+            this.labelEmail.TabIndex = 202;
+            this.labelEmail.Text = "E-Mail Adress";
+            // 
+            // buttonSwitch
+            // 
+            this.buttonSwitch.Location = new System.Drawing.Point(281, 50);
+            this.buttonSwitch.Name = "buttonSwitch";
+            this.buttonSwitch.Size = new System.Drawing.Size(47, 21);
+            this.buttonSwitch.TabIndex = 203;
+            this.buttonSwitch.Text = "<-->";
+            this.buttonSwitch.UseVisualStyleBackColor = true;
+            this.buttonSwitch.Click += new System.EventHandler(this.buttonSwitch_Click);
+            // 
             // formConnectionBindingSource
             // 
             this.formConnectionBindingSource.DataSource = typeof(SwissTransportApplication.FormConnection);
@@ -199,7 +213,8 @@ namespace SwissTransportApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 547);
+            this.ClientSize = new System.Drawing.Size(924, 547);
+            this.Controls.Add(this.buttonSwitch);
             this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.inputEmail);
             this.Controls.Add(this.labelErrorArrival);
@@ -236,5 +251,6 @@ namespace SwissTransportApplication
         private System.Windows.Forms.DataGridViewTextBoxColumn toPlace;
         private System.Windows.Forms.DataGridViewTextBoxColumn fromTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn ToTime;
+        private System.Windows.Forms.Button buttonSwitch;
     }
 }

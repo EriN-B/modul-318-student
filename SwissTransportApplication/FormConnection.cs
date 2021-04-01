@@ -10,7 +10,7 @@ namespace SwissTransportApplication
 {
     public partial class FormConnection : Form
     {
-        private readonly List<string> typeAheadStations = new List<string>();
+        private readonly List<string> listTypeAheadStations = new List<string>();
 
         private int mailIndex;
 
@@ -34,13 +34,14 @@ namespace SwissTransportApplication
 
                     var connections = transport.GetConnections(inputDeparture.Text, inputArrival.Text);
 
-                    var buttonSend = new DataGridViewButtonColumn();
+                    var buttonSend = new DataGridViewButtonColumn
+                    {
+                        HeaderText = "Share",
 
-                    buttonSend.HeaderText = "Share";
+                        Name = "buttonSend",
 
-                    buttonSend.Name = "buttonSend";
-
-                    buttonSend.Text = "Share";
+                        Text = "Share"
+                    };
 
                     buttonSend.UseColumnTextForButtonValue = true;
 
@@ -80,9 +81,9 @@ namespace SwissTransportApplication
 
                     foreach (var station in stations.StationList)
                         if (station != null)
-                            typeAheadStations.Add(station.Name);
+                            listTypeAheadStations.Add(station.Name);
 
-                    foreach (var station in typeAheadStations)
+                    foreach (var station in listTypeAheadStations)
                         if (station != null)
                         {
                             inputDeparture.DroppedDown = true;
@@ -110,10 +111,10 @@ namespace SwissTransportApplication
 
                     autoCompleteSetConfig(inputValue.Arrival);
 
-                    foreach (var station in st.StationList) typeAheadStations.Add(station.Name);
+                    foreach (var station in st.StationList) listTypeAheadStations.Add(station.Name);
 
-                    if (typeAheadStations.Count != 0)
-                        foreach (var station in typeAheadStations)
+                    if (listTypeAheadStations.Count != 0)
+                        foreach (var station in listTypeAheadStations)
                             if (station != null)
                                 inputArrival.Items.Add(station);
                 }
@@ -138,7 +139,7 @@ namespace SwissTransportApplication
         {
             if (inputValue == inputValue.Arrival)
             {
-                typeAheadStations.Clear();
+                listTypeAheadStations.Clear();
 
                 inputArrival.Items.Clear();
 
@@ -152,7 +153,7 @@ namespace SwissTransportApplication
             }
             else
             {
-                typeAheadStations.Clear();
+                listTypeAheadStations.Clear();
 
                 inputDeparture.Items.Clear();
 
@@ -234,6 +235,13 @@ namespace SwissTransportApplication
                 MessageBox.Show("Geben Sie eine gültige E-Mail Adresse ein", "E-Mail Sender", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        private void buttonSwitch_Click(object sender, EventArgs e)
+        {
+            var inputDepartureTemp = inputDeparture.Text;
+            inputDeparture.Text = inputArrival.Text;
+            inputArrival.Text = inputDepartureTemp;
         }
 
         private enum messageBoxType
