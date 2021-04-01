@@ -38,11 +38,13 @@ namespace SwissTransportApplication
             this.inputArrival = new System.Windows.Forms.ComboBox();
             this.labelErrorDeparture = new System.Windows.Forms.Label();
             this.labelErrorArrival = new System.Windows.Forms.Label();
-            this.Gleis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abOrt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.anOrt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abZeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.anZeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inputEmail = new System.Windows.Forms.TextBox();
+            this.labelEmail = new System.Windows.Forms.Label();
+            this.platform = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fromPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fromTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ToTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.formConnectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataConnections)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formConnectionBindingSource)).BeginInit();
@@ -51,10 +53,10 @@ namespace SwissTransportApplication
             // buttonSearchConnection
             // 
             this.buttonSearchConnection.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonSearchConnection.Location = new System.Drawing.Point(28, 94);
+            this.buttonSearchConnection.Location = new System.Drawing.Point(301, 91);
             this.buttonSearchConnection.Name = "buttonSearchConnection";
-            this.buttonSearchConnection.Size = new System.Drawing.Size(514, 23);
-            this.buttonSearchConnection.TabIndex = 5;
+            this.buttonSearchConnection.Size = new System.Drawing.Size(241, 23);
+            this.buttonSearchConnection.TabIndex = 4;
             this.buttonSearchConnection.Text = "Verbindung Suchen";
             this.buttonSearchConnection.UseVisualStyleBackColor = true;
             this.buttonSearchConnection.Click += new System.EventHandler(this.buttonSearchConnection_Click);
@@ -65,17 +67,17 @@ namespace SwissTransportApplication
             this.dataConnections.BackgroundColor = System.Drawing.Color.White;
             this.dataConnections.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataConnections.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Gleis,
-            this.abOrt,
-            this.anOrt,
-            this.abZeit,
-            this.anZeit});
+            this.platform,
+            this.fromPlace,
+            this.toPlace,
+            this.fromTime,
+            this.ToTime});
             this.dataConnections.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataConnections.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dataConnections.Location = new System.Drawing.Point(0, 236);
+            this.dataConnections.Location = new System.Drawing.Point(0, 188);
             this.dataConnections.Name = "dataConnections";
             this.dataConnections.ReadOnly = true;
-            this.dataConnections.Size = new System.Drawing.Size(833, 311);
+            this.dataConnections.Size = new System.Drawing.Size(833, 359);
             this.dataConnections.TabIndex = 200;
             this.dataConnections.Visible = false;
             this.dataConnections.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataConnections_CellContentClick);
@@ -138,35 +140,56 @@ namespace SwissTransportApplication
             this.labelErrorArrival.TabIndex = 13;
             this.labelErrorArrival.Visible = false;
             // 
-            // Gleis
+            // inputEmail
             // 
-            this.Gleis.HeaderText = "Gleis";
-            this.Gleis.Name = "Gleis";
-            this.Gleis.ReadOnly = true;
+            this.inputEmail.Location = new System.Drawing.Point(28, 94);
+            this.inputEmail.Name = "inputEmail";
+            this.inputEmail.Size = new System.Drawing.Size(231, 20);
+            this.inputEmail.TabIndex = 3;
             // 
-            // abOrt
+            // labelEmail
             // 
-            this.abOrt.HeaderText = "Von";
-            this.abOrt.Name = "abOrt";
-            this.abOrt.ReadOnly = true;
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.Location = new System.Drawing.Point(28, 78);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(71, 13);
+            this.labelEmail.TabIndex = 202;
+            this.labelEmail.Text = "E-Mail Adress";
             // 
-            // anOrt
+            // platform
             // 
-            this.anOrt.HeaderText = "Nach";
-            this.anOrt.Name = "anOrt";
-            this.anOrt.ReadOnly = true;
+            this.platform.DataPropertyName = "platform";
+            this.platform.HeaderText = "Gleis";
+            this.platform.Name = "platform";
+            this.platform.ReadOnly = true;
             // 
-            // abZeit
+            // fromPlace
             // 
-            this.abZeit.HeaderText = "Zeit (ab)";
-            this.abZeit.Name = "abZeit";
-            this.abZeit.ReadOnly = true;
+            this.fromPlace.DataPropertyName = "fromPlace";
+            this.fromPlace.HeaderText = "Von";
+            this.fromPlace.Name = "fromPlace";
+            this.fromPlace.ReadOnly = true;
             // 
-            // anZeit
+            // toPlace
             // 
-            this.anZeit.HeaderText = "Zeit (an)";
-            this.anZeit.Name = "anZeit";
-            this.anZeit.ReadOnly = true;
+            this.toPlace.DataPropertyName = "toPlace";
+            this.toPlace.HeaderText = "Nach";
+            this.toPlace.Name = "toPlace";
+            this.toPlace.ReadOnly = true;
+            // 
+            // fromTime
+            // 
+            this.fromTime.DataPropertyName = "fromTime";
+            this.fromTime.HeaderText = "Zeit (ab)";
+            this.fromTime.Name = "fromTime";
+            this.fromTime.ReadOnly = true;
+            // 
+            // ToTime
+            // 
+            this.ToTime.DataPropertyName = "ToTime";
+            this.ToTime.HeaderText = "Zeit (an)";
+            this.ToTime.Name = "ToTime";
+            this.ToTime.ReadOnly = true;
             // 
             // formConnectionBindingSource
             // 
@@ -177,6 +200,8 @@ namespace SwissTransportApplication
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(833, 547);
+            this.Controls.Add(this.labelEmail);
+            this.Controls.Add(this.inputEmail);
             this.Controls.Add(this.labelErrorArrival);
             this.Controls.Add(this.labelErrorDeparture);
             this.Controls.Add(this.inputArrival);
@@ -204,10 +229,12 @@ namespace SwissTransportApplication
         private System.Windows.Forms.Label labelErrorDeparture;
         private System.Windows.Forms.Label labelErrorArrival;
         private System.Windows.Forms.BindingSource formConnectionBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Gleis;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abOrt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn anOrt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abZeit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn anZeit;
+        private System.Windows.Forms.TextBox inputEmail;
+        private System.Windows.Forms.Label labelEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn platform;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fromPlace;
+        private System.Windows.Forms.DataGridViewTextBoxColumn toPlace;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fromTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ToTime;
     }
 }
