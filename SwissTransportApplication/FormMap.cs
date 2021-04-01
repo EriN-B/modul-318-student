@@ -44,11 +44,15 @@ namespace SwissTransportApplication
 
                 var transport = new Transport();
 
-                var stations = transport.GetStations(inputLocation.Text);
+                List <Station> listStationsResult = transport.GetStations(inputLocation.Text).StationList;
+
+                Station stationFoundStation = listStationsResult.Find(x => x.Name == inputLocation.Text);
+
+                MessageBox.Show(stationFoundStation.Name);
             }
             catch(Exception error)
             {
-                MessageBox.Show("Error");
+                MessageBox.Show(error.Message);
             }
         }
 
