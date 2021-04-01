@@ -36,11 +36,11 @@ namespace SwissTransportApplication
 
                     var buttonSend = new DataGridViewButtonColumn
                     {
-                        HeaderText = "Share",
+                        HeaderText = "Teilen",
 
                         Name = "buttonSend",
 
-                        Text = "Share"
+                        Text = "Teilen"
                     };
 
                     buttonSend.UseColumnTextForButtonValue = true;
