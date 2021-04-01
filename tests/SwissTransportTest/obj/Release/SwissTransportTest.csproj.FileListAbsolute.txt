@@ -1,0 +1,13 @@
+C:\Users\Admin\source\repos\modul-318\tests\SwissTransportTest\bin\Release\SwissTransportTest.dll
+C:\Users\Admin\source\repos\modul-318\tests\SwissTransportTest\bin\Release\SwissTransportTest.pdb
+C:\Users\Admin\source\repos\modul-318\tests\SwissTransportTest\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Admin\source\repos\modul-318\tests\SwissTransportTest\bin\Release\SwissTransport.dll
+C:\Users\Admin\source\repos\modul-318\tests\SwissTransportTest\bin\Release\Newtonsoft.Json.dll
+C:\Users\Admin\source\repos\modul-318\tests\SwissTransportTest\bin\Release\SwissTransport.pdb
+C:\Users\Admin\source\repos\modul-318\tests\SwissTransportTest\bin\Release\Newtonsoft.Json.xml
+C:\Users\Admin\source\repos\modul-318\tests\SwissTransportTest\bin\Release\de\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Admin\source\repos\modul-318\tests\SwissTransportTest\obj\Release\SwissTransportTest.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\modul-318\tests\SwissTransportTest\obj\Release\SwissTransportTest.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\modul-318\tests\SwissTransportTest\obj\Release\SwissTransportTest.csproj.CopyComplete
+C:\Users\Admin\source\repos\modul-318\tests\SwissTransportTest\obj\Release\SwissTransportTest.dll
+C:\Users\Admin\source\repos\modul-318\tests\SwissTransportTest\obj\Release\SwissTransportTest.pdb
