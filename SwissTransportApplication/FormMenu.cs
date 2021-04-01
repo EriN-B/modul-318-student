@@ -1,22 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SwissTransportApplication
 {
-    public partial class Form1 : Form
+    public partial class FormMenu : Form
     {
         //Fields
         private Button currentButton;
 
-        public Form1()
+        public FormMenu()
         {
             InitializeComponent();
         }
@@ -24,7 +16,7 @@ namespace SwissTransportApplication
         private void buttonTable_Click(object sender, EventArgs e)
         {
             panelMain.Controls.Clear();
-            FormPlan formPlan = new FormPlan() {Dock = DockStyle.Fill, TopLevel = false, TopMost = true};
+            var formPlan = new FormPlan {Dock = DockStyle.Fill, TopLevel = false, TopMost = true};
             formPlan.FormBorderStyle = FormBorderStyle.None;
             panelMain.Controls.Add(formPlan);
             formPlan.Show();
@@ -34,7 +26,7 @@ namespace SwissTransportApplication
         private void buttonConnections_Click(object sender, EventArgs e)
         {
             panelMain.Controls.Clear();
-            FormConnection formConnection = new FormConnection() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            var formConnection = new FormConnection {Dock = DockStyle.Fill, TopLevel = false, TopMost = true};
             formConnection.FormBorderStyle = FormBorderStyle.None;
             panelMain.Controls.Add(formConnection);
             formConnection.Show();
@@ -44,7 +36,7 @@ namespace SwissTransportApplication
         private void buttonMap_Click(object sender, EventArgs e)
         {
             panelMain.Controls.Clear();
-            FormMap formMap = new FormMap() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            var formMap = new FormMap {Dock = DockStyle.Fill, TopLevel = false, TopMost = true};
             formMap.FormBorderStyle = FormBorderStyle.None;
             panelMain.Controls.Add(formMap);
             formMap.Show();
@@ -55,7 +47,7 @@ namespace SwissTransportApplication
         {
             //Load Station-Serch Component
             panelMain.Controls.Clear();
-            FormStation formStation = new FormStation { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            var formStation = new FormStation {Dock = DockStyle.Fill, TopLevel = false, TopMost = true};
             formStation.FormBorderStyle = FormBorderStyle.None;
             panelMain.Controls.Add(formStation);
             formStation.Show();
@@ -65,7 +57,7 @@ namespace SwissTransportApplication
         private void Form1_Load(object sender, EventArgs e)
         {
             panelMain.Controls.Clear();
-            FormConnection formConnection = new FormConnection() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            var formConnection = new FormConnection {Dock = DockStyle.Fill, TopLevel = false, TopMost = true};
             formConnection.FormBorderStyle = FormBorderStyle.None;
             panelMain.Controls.Add(formConnection);
             formConnection.Show();

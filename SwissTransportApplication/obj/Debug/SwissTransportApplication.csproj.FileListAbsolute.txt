@@ -2,7 +2,6 @@ C:\Users\Admin\source\repos\modul-318\SwissTransportApplication\bin\Debug\SwissT
 C:\Users\Admin\source\repos\modul-318\SwissTransportApplication\bin\Debug\SwissTransportApplication.exe
 C:\Users\Admin\source\repos\modul-318\SwissTransportApplication\bin\Debug\SwissTransportApplication.pdb
 C:\Users\Admin\source\repos\modul-318\SwissTransportApplication\obj\Debug\SwissTransportApplication.csprojAssemblyReference.cache
-C:\Users\Admin\source\repos\modul-318\SwissTransportApplication\obj\Debug\SwissTransportApplication.Form1.resources
 C:\Users\Admin\source\repos\modul-318\SwissTransportApplication\obj\Debug\SwissTransportApplication.Properties.Resources.resources
 C:\Users\Admin\source\repos\modul-318\SwissTransportApplication\obj\Debug\SwissTransportApplication.csproj.GenerateResource.cache
 C:\Users\Admin\source\repos\modul-318\SwissTransportApplication\obj\Debug\SwissTransportApplication.csproj.CoreCompileInputs.cache
@@ -36,3 +35,4 @@ D:\Projects\modul-318-student\SwissTransportApplication\obj\Debug\SwissTransport
 D:\Projects\modul-318-student\SwissTransportApplication\obj\Debug\SwissTransportApplication.pdb
 D:\Projects\modul-318-student\SwissTransportApplication\obj\Debug\SwissTransportApplication.FormMap.resources
 C:\Users\Admin\source\repos\modul-318\SwissTransportApplication\obj\Debug\SwissTransportApplication.FormMap.resources
+C:\Users\Admin\source\repos\modul-318\SwissTransportApplication\obj\Debug\SwissTransportApplication.FormMenu.resources

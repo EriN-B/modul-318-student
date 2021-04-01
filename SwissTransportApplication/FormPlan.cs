@@ -1,25 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using SwissTransport.Core;
-using SwissTransport.Models;
 
 namespace SwissTransportApplication
 {
     public partial class FormPlan : Form
     {
         private readonly List<string> typeAheadStations = new List<string>();
-        private enum inputValue
-        {
-            Arrival,
-            Departure
-        }
+
         public FormPlan()
         {
             InitializeComponent();
@@ -28,29 +17,24 @@ namespace SwissTransportApplication
         private void buttonSearchStation_Click(object sender, EventArgs e)
         {
             if (inputStation.Text != "")
-            {
                 try
                 {
                     dataStainBoard.Rows.Clear();
                     var transport = new Transport();
                     var stationBoard = transport.GetStationBoard(inputStation.Text);
                     foreach (var stations in stationBoard.Entries)
-                    {
-
                         dataStainBoard.Rows.Add
                         (
                             inputStation.Text,
                             stations.To,
                             stations.Category,
-                            stations.Stop.Departure.Hour.ToString() + ":" + stations.Stop.Departure.Minute.ToString()
+                            stations.Stop.Departure.Hour + ":" + stations.Stop.Departure.Minute
                         );
-                    }
                 }
                 catch
                 {
                     //showMessageBox("Die angegeben Station kann nicht gefunden werden", "Error", messageBoxType.Error);
                 }
-            }
         }
 
         private void autoCompleteSetConfig()
@@ -100,7 +84,13 @@ namespace SwissTransportApplication
 
         private void FormPlan_Load(object sender, EventArgs e)
         {
-            this.ActiveControl = inputStation;
+            ActiveControl = inputStation;
+        }
+
+        private enum inputValue
+        {
+            Arrival,
+            Departure
         }
     }
 }

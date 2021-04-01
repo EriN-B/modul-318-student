@@ -56,10 +56,7 @@ namespace SwissTransportApplication
 
                     mailIndex += 1;
 
-                    if (mailIndex == 1)
-                    {
-                        dataConnections.Columns.Add(buttonSend);
-                    }
+                    if (mailIndex == 1) dataConnections.Columns.Add(buttonSend);
                 }
                 catch
                 {
@@ -171,7 +168,9 @@ namespace SwissTransportApplication
 
         private void dataConnections_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (Regex.IsMatch(inputEmail.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z"))
+            if (Regex.IsMatch(inputEmail.Text,
+                @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z")
+            )
             {
                 if (e.ColumnIndex == 5 && e.RowIndex < 4)
                 {
@@ -183,20 +182,18 @@ namespace SwissTransportApplication
 
                     var dataGridRow = dataConnections.Rows[e.RowIndex];
 
-                    string dataPlatform = "Keine Daten";
+                    var dataPlatform = "Keine Daten";
 
                     if (dataGridRow.Cells["platform"].Value != null)
-                    {
                         dataPlatform = dataGridRow.Cells["platform"].Value.ToString();
-                    }
 
-                    string dataFrom = dataGridRow.Cells["fromPlace"].Value.ToString();
+                    var dataFrom = dataGridRow.Cells["fromPlace"].Value.ToString();
 
-                    string dataTo = dataGridRow.Cells["toPlace"].Value.ToString();
+                    var dataTo = dataGridRow.Cells["toPlace"].Value.ToString();
 
-                    string dataTimeFrom = dataGridRow.Cells["fromTime"].Value.ToString();
+                    var dataTimeFrom = dataGridRow.Cells["fromTime"].Value.ToString();
 
-                    string dataTimeTo = dataGridRow.Cells["toTime"].Value.ToString();
+                    var dataTimeTo = dataGridRow.Cells["toTime"].Value.ToString();
 
                     var smtpClient = new SmtpClient
                     {
@@ -214,16 +211,15 @@ namespace SwissTransportApplication
                         {
                             message.To.Add(toAdress.Address);
                             message.Subject = "Fahrplan";
-                            message.Body = 
-                            (
+                            message.Body =
                                 "Gleis: " + dataPlatform + "\n" +
-                                "Von: " + dataFrom + "\n" + 
-                                "Nach: " + dataTo + "\n" + 
+                                "Von: " + dataFrom + "\n" +
+                                "Nach: " + dataTo + "\n" +
                                 "Zeit (ab): " + dataTimeFrom + "\n" +
-                                "Zeit (an): " + dataTimeTo + "\n"
-                            );
+                                "Zeit (an): " + dataTimeTo + "\n";
                             smtpClient.Send(message);
-                            MessageBox.Show("E-Mail Erfolgreich an "+inputEmail.Text + " versendet", "E-Mail Sender", MessageBoxButtons.OK,
+                            MessageBox.Show("E-Mail Erfolgreich an " + inputEmail.Text + " versendet", "E-Mail Sender",
+                                MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
                         }
                     }
@@ -235,7 +231,7 @@ namespace SwissTransportApplication
             }
             else
             {
-                MessageBox.Show("Geben Sie eine gültige E-Mail Adresse ein" , "E-Mail Sender", MessageBoxButtons.OK,
+                MessageBox.Show("Geben Sie eine gültige E-Mail Adresse ein", "E-Mail Sender", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }

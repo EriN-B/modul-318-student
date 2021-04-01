@@ -1,0 +1,9 @@
+C:\Users\Admin\source\repos\modul-318\src\SwissTransport\bin\Release\SwissTransport.dll
+C:\Users\Admin\source\repos\modul-318\src\SwissTransport\bin\Release\SwissTransport.pdb
+C:\Users\Admin\source\repos\modul-318\src\SwissTransport\bin\Release\Newtonsoft.Json.dll
+C:\Users\Admin\source\repos\modul-318\src\SwissTransport\bin\Release\Newtonsoft.Json.xml
+C:\Users\Admin\source\repos\modul-318\src\SwissTransport\obj\Release\SwissTransport.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\modul-318\src\SwissTransport\obj\Release\SwissTransport.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\modul-318\src\SwissTransport\obj\Release\SwissTransport.csproj.CopyComplete
+C:\Users\Admin\source\repos\modul-318\src\SwissTransport\obj\Release\SwissTransport.dll
+C:\Users\Admin\source\repos\modul-318\src\SwissTransport\obj\Release\SwissTransport.pdb
